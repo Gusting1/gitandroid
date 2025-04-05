@@ -27,8 +27,7 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         // TextView 초기화
-        tvDisplay = findViewById(R.id.tvDisplay);
-        tvDisplay.setText("0");
+        
 
         // 숫자 버튼 초기화
 
