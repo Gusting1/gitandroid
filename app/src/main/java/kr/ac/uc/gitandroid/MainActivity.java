@@ -23,8 +23,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // TextView 초기화
 
-        // 등호 버튼 클릭 리스너'
+
+        // 숫자 버튼 초기화
+
+        // 연산자 버튼 초기화
+
+        // 숫자 버튼 클릭 리스너 설정
+
+
+        // 숫자 버튼에 리스너 적용
+
+
+        // 연산자 버튼 클릭 리스너 설정
+
+
+        // 연산자 버튼에 리스너 적용
+
+        // 등호 버튼 클릭 리스너
         btnEqual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,5 +75,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        // C 버튼 (현재 입력 취소)
+
+        // AC 버튼 (모든 계산 취소)
+
     }
 }
