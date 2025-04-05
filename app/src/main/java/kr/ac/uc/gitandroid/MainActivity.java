@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
 
 
         // C 버튼 (현재 입력 취소)
