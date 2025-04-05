@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // TextView 초기화
-
+        tvDisplay = findViewById(R.id.tvDisplay);
+        tvDisplay.setText("0");
 
         // 숫자 버튼 초기화
         btn0 = findViewById(R.id.btn0);
@@ -45,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
         btnEqual = findViewById(R.id.btnEqual);
         btnCancel = findViewById(R.id.btnCancel);
         btnAllClear = findViewById(R.id.btnAllClear);
-
         // 숫자 버튼 클릭 리스너 설정
 
 
@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
 
         // 연산자 버튼에 리스너 적용
 
-
         // 등호 버튼 클릭 리스너
+
 
 
         // C 버튼 (현재 입력 취소)
