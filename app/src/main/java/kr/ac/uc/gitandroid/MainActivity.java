@@ -1,6 +1,7 @@
 package kr.ac.uc.gitandroid;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -43,9 +44,27 @@ public class MainActivity extends AppCompatActivity {
 
 
         // 연산자 버튼 클릭 리스너 설정
+        View.OnClickListener operatorClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Button button = (Button) v;
+                String op = button.getText().toString();
 
+                try {
+                    firstNumber = Double.parseDouble(tvDisplay.getText().toString());
+                    operation = op;
+                    isNewInput = true;
+                } catch (NumberFormatException e) {
+                    tvDisplay.setText("Error");
+                    isNewInput = true;
+                }
+            }
+        };
 
         // 연산자 버튼에 리스너 적용
+        btnPlus.setOnClickListener(operatorClickListener);
+        btnMinus.setOnClickListener(operatorClickListener);
+        btnMultiply.setOnClickListener(operatorClickListener);
 
 
         // 등호 버튼 클릭 리스너
