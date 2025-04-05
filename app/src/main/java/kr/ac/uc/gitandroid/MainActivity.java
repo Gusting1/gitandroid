@@ -89,12 +89,29 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener operatorClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Button button = (Button) v;
-                String op = button.getText().toString();
-
                 try {
-                    firstNumber = Double.parseDouble(tvDisplay.getText().toString());
-                    operation = op;
+                    secondNumber = Double.parseDouble(tvDisplay.getText().toString());
+                    double result = 0;
+
+                    switch (operation) {
+                        case "+":
+                            result = firstNumber + secondNumber;
+                            break;
+                        case "-":
+                            result = firstNumber - secondNumber;
+                            break;
+                        case "*":
+                            result = firstNumber * secondNumber;
+                            break;
+                    }
+
+                    // 정수인 경우 소수점 제거 (예: 5.0 -> 5)
+                    if (result == (long) result) {
+                        tvDisplay.setText(String.valueOf((long) result));
+                    } else {
+                        tvDisplay.setText(String.valueOf(result));
+                    }
+
                     isNewInput = true;
                 } catch (NumberFormatException e) {
                     tvDisplay.setText("Error");
