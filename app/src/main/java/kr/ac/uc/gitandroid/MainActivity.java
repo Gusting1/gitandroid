@@ -50,10 +50,25 @@ public class MainActivity extends AppCompatActivity {
         // 등호 버튼 클릭 리스너
 
         // C 버튼 (현재 입력 취소)
-
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvDisplay.setText("0");
+                isNewInput = true;
+            }
+        });
 
         // AC 버튼 (모든 계산 취소)
-
+        btnAllClear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvDisplay.setText("0");
+                firstNumber = 0;
+                secondNumber = 0;
+                operation = "";
+                isNewInput = true;
+            }
+        });
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
